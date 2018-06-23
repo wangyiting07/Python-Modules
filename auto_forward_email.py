@@ -74,7 +74,7 @@ while(stop != 's'):
         msg['To'] = forward2email
         msg['Subject'] = 'ANY SUBJECT THAT YOU WANT TO USE'
         message = body.decode('utf-8')
-        message = message + sender       # not sure whether the content of email tell who send this, just add the sender at the end of email ????????????????????????
+        message = message + sender     
         msg.attach(MIMEText(message))
         smtpObj.send_message(msg)
         print("finish sending the unread email and mark it as read\n")
