@@ -1,7 +1,7 @@
 # Python-Modules
 This contents several python modules which can be the resources in the future
 
-1. Monitor the inbox and auto forward particular emails.
+# Monitor the inbox and auto forward particular emails.
   This module uses three library to achieve receive email and send the email.
   They are imaplib(receive email), smtplib(send email) and email(get and set the content of email)
 
@@ -21,10 +21,10 @@ This contents several python modules which can be the resources in the future
   get readable format from raw email:
   latest_email_uid = data[0].split()[x] # unique ids wrt label selected
   result, email_data = mail.uid('fetch', latest_email_uid, '(RFC822)')
-  # fetch the email body (RFC822) for the given ID
+  //fetch the email body (RFC822) for the given ID
   raw_email = email_data[0][1]
   raw_email_string = raw_email.decode('utf-8')
-  # converts byte literal to string removing b''
+  //converts byte literal to string removing b''
   email_message = email.message_from_string(raw_email_string)
 
   among above:
