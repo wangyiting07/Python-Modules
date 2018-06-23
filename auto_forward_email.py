@@ -46,6 +46,7 @@ mail.select('inbox')
 #force the script run forever(better way to do that is adding this script to windows service.)
 while(stop != 's'):
     #serach and get uid of unread mail with special subject.
+    #can use other restriction to do the search.
     result, data = mail.uid('search', None, 'UNSEEN','HEADER Subject "SUBJECT THAT YOU WANT TO MONITOR"')
     # search and return uids instead
     i = len(data[0].split()) # data[0] is a space separate string
