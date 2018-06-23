@@ -7,9 +7,9 @@ This contents several python modules which can be the resources in the future
 
   ### hide the content that user enters.
   ```ruby
-  getpass.getpass("input") 
+  getpass.getpass("input")
   ```
-  ### Auto run when boot the computer and keep it running 
+  ### Auto run when boot the computer and keep it running
   The reason I have a variable named stop is that I want this script can run forever (as long as the computer is booted.) And I don't want to set it as windows service. So I use such little tricky. And I set a .bat file in C:\Users\'username'\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup
   and the content of that file is:
   ```ruby
@@ -66,4 +66,19 @@ This contents several python modules which can be the resources in the future
   ### At last, send the email:
   ```ruby
   smtpObj.send_message(msg)
+  ```
+# Python script converting excel file to json file
+  Actually, this is just read in excel file and change the data structure (put data into dictionary and list), then output as json file.
+
+  Here I only consider the situation that there are two or more cells in one column would be merged together. So the excel file shouldn't have two column merged together.
+
+  The library I used are openpyxl(handle excel file), json(output json file), pprint(output json file as a pretty format)
+
+  ### check whether cells are merged.
+  openpyxl has a mether named merged_cells.ranges, this return a list with range of merged cell. If this list is empty, then there are no cells merged.
+
+  ### output a json file.
+  ```ruby
+  with open(output_file,'w') as f:
+      f.write(json.dumps(Fault_list,indent=4,sort_keys=True))
   ```
